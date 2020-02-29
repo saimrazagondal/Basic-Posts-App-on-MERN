@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This is a simple MERN stack application that creates and deletes blogposts while communicating to the database. It contains two form fields as 'title' and 'body'. Clicking on the submit button would submit this form and save the data into a mongo database. The section below displays all the current posts by retrieving data from the database. 
 
-## Available Scripts
+Once a new post is added, the below section updates in real time without the page reloading.
 
-In the project directory, you can run:
+The DeleteAll button would remove all data from the database and consequently remove all the posts from the below section that are showing on the page.
 
-### `npm start`
+### How to run
+In the console type `npm run runApp` and this should start both the client(frontEnd) and the backend server at posts 3000 and 8080 respectively. If you wish to know how both are running simultaneiously with one command it is through the "concurrently" npm package. A script has been declared in the package.json file(main directory).
 
-Runs the app in the development mode.<br />
+If port 8080 is busy you can change this in the code. The port number is declared in the "server.js" file as a const variable named PORT.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The frontend is communicating with the backend perfectly and you need only to interact from port 3000. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+### Database Details:
+The DB name is mernApp1 and it is mentioned in the "server.js" file where the mongoose connect method is used with a url to connect locally. You will need to have mongodb setup on your environment inorder to run this and communicate with the database. The code creates a collection named "blogPosts" with the schema mentioned in the (models/blogPostModel.js) file.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Required Packages
+You first of all require npm. You can get it in addition to nodejs from its website. After npm is intalled you can use it to download the following on the console by running "npm install package_name":
+  - nodemon
+  - express
+  - axios
+  - mongoose
+  - concurrently
+  - morgan
 
-### `npm run build`
+Running "npm install" from the console should install the latter 5 packages. However nodemon needs to be installed separately.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
